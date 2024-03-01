@@ -5,7 +5,8 @@ services:
     container_name: marketplace-db
     extends:
       file: backend/docker-compose.base.yml
-      service: db    
+      service: db   
+       
   backend:
     container_name: marketplace-backend
     extends:

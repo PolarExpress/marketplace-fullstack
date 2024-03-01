@@ -20,7 +20,7 @@ services:
 
   db:
     extends:
-      file: ../backend/docker-compose.yml
+      file: ../backend/docker-compose.base.yml
       service: db
 
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
@@ -28,3 +28,4 @@ services:
 
 volumes:
   db-data:
+    name: graphpolaris-marketplace-db-data
