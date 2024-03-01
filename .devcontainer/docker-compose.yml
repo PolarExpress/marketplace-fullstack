@@ -28,4 +28,4 @@ services:
 
 volumes:
   db-data:
-    name: graphpolaris-marketplace-db-data
+    name: gp-marketplace-db-data
