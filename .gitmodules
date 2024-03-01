@@ -1,6 +1,6 @@
 [submodule "frontend"]
-	path = marketplace-frontend
+	path = frontend
 	url = git@github.com:PolarExpress/marketplace-frontend.git
 [submodule "backend"]
-	path = marketplace-backend
+	path = backend
 	url = git@github.com:PolarExpress/marketplace-backend.git
