@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: marketplace-db
+    extends:
+      file: backend/docker-compose.base.yml
+      service: db    
+  backend:
+    container_name: marketplace-backend
+    extends:
+      file: backend/docker-compose.base.yml
+      service: backend-base
+    build: 
+      target: prod
+    depends_on:
+      - db
+volumes:
+  db-data:
