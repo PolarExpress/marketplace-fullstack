@@ -29,3 +29,4 @@ services:
       REACT_APP_API_URL: http://localhost:8000
 volumes:
   db-data:
+    name: gp-marketplace-db-data
