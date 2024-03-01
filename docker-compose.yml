@@ -2,13 +2,13 @@ version: '3.9'
 
 services:
   db:
-    container_name: marketplace-db
+    container_name: gp-marketplace-db
     extends:
       file: backend/docker-compose.base.yml
       service: db   
        
   backend:
-    container_name: marketplace-backend
+    container_name: gp-marketplace-backend
     extends:
       file: backend/docker-compose.base.yml
       service: backend-base
@@ -16,5 +16,16 @@ services:
       target: prod
     depends_on:
       - db
+  frontend:
+    container_name: gp-marketplace-frontend
+    build: 
+      context: frontend
+      dockerfile: ./Dockerfile
+    ports: 
+      - 8000:8000
+    depends_on:
+      - backend
+    environment:
+      REACT_APP_API_URL: http://localhost:8000
 volumes:
   db-data:
