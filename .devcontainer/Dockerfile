@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm
+FROM mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -10,3 +10,5 @@ RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_V
 
 # [Optional] Uncomment if you want to install more global node modules
 RUN su node -c "npm install -g vite"
+
+RUN su node -c "sudo npx playwright install-deps && npx playwright install"

@@ -8,6 +8,8 @@ services:
 
     volumes:
       - ../..:/workspaces:cached
+      - backend-node_modules:/workspaces/marketplace-fullstack/backend/node_modules
+      - frontend-node_modules:/workspaces/marketplace-fullstack/frontend/node_modules
       
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -27,5 +29,9 @@ services:
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
 volumes:
+  backend-node_modules:
+    external: false
+  frontend-node_modules:
+    external: false
   db-data:
     name: gp-marketplace-db-data
