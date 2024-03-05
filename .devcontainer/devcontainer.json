@@ -1,11 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node-postgres
 {
-    "name": "Node.js & PostgreSQL",
+    "name": "Marketplace",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
+    
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
 
@@ -14,7 +14,7 @@
     // "forwardPorts": [3000, 5432],
 
     // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "yarn install",
+    "postCreateCommand": "sudo chown node ./frontend/node_modules && sudo chown node ./backend/node_modules",
 
     // Configure tool-specific properties.
         // Configure tool-specific properties.
