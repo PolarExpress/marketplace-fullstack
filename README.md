@@ -4,6 +4,12 @@ This repository contains the frontend and backend for the GraphPolaris marketpla
 
 ## Development setup
 
+### Requirements
+- VS Code
+- VSC Dev Containers extension
+- `docker` and `docker-compose` (or Docker Desktop + WSL for Windows systems)
+
+### Steps
 1. Clone this repository and its submodules using
 
    ```sh
@@ -21,6 +27,7 @@ This repository contains the frontend and backend for the GraphPolaris marketpla
 
 The PostgreSQL database is autostarted by the dev container. To access the database from the host, add the following to `.devcontainer/devcontainer.json`:
 
+
 ```json
 "forwardPorts": ["5432"]
 ```
@@ -29,4 +36,24 @@ This will expose the Postgres instance on port 5432.
 
 ### Running the frontend/backend
 For details on how to run the frontend or backend, refer to the README.md file in the corresponding repository.
+
+## Deployment
+
+### Requirements
+- `docker` and `docker-compose` (or Docker Desktop + WSL for Windows systems)
+- optional: `docker-buildx` (for more efficient multi-stage builds)
+
+### Steps
+To deploy the entire stack, simply run
+```
+docker compose up -d
+```
+in the root directory of this repo.
+
+If instead you only need the backend + DB, run:
+```
+docker compose up -d backend
+```
+
+
 
