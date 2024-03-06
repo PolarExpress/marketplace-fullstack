@@ -33,6 +33,8 @@ rm -rf node_modules/*
 
 This will not remove the folder itself; this is impossible due to the fact that it appears as a mounted device to the container system.
 
+This also means `npm install` needs to be run again after a docker volume/system prune.
+
 ### Accessing the database from the host system
 
 The PostgreSQL database is autostarted by the dev container. To access the database from the host, add the following to `.devcontainer/devcontainer.json`:
