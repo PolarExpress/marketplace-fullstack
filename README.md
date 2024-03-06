@@ -23,10 +23,19 @@ This repository contains the frontend and backend for the GraphPolaris marketpla
    npm --prefix backend i && npm --prefix frontend i 
    ```
 
+### `node_modules` and the Dev Container
+Because of performance issues with bind volumes on Windows, the `node_modules` folders are inside their own volumes managed by Docker. If you ever need to remove this folder, do it by running the following command in the Dev Container:
+
+```sh
+# make sure to cd to the frontend/backend repo before running this command
+rm -rf node_modules/*
+```
+
+This will not remove the folder itself; this is impossible due to the fact that it appears as a mounted device to the container system.
+
 ### Accessing the database from the host system
 
 The PostgreSQL database is autostarted by the dev container. To access the database from the host, add the following to `.devcontainer/devcontainer.json`:
-
 
 ```json
 "forwardPorts": ["5432"]
